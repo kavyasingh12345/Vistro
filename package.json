@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "fullstack": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "fullstack": "concurrently \"nodemon index.js\" \"npx vite\"",
     "frontend": "cd frontend && npx vite",
     "backend": "nodemon backend/index.js"
   },
