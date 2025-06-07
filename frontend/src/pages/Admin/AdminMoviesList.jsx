@@ -56,3 +56,5 @@ const AdminMoviesList = () => {
 };
 
 export default AdminMoviesList;
+
+
