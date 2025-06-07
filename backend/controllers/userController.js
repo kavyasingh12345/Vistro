@@ -5,6 +5,7 @@ import createToken from "../utils/createToken.js";
 
 const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
+
   if (!username || !email || !password) {
     throw new Error("Please fill all the fields");
   }
@@ -66,7 +67,6 @@ const logoutCurrentUser = asyncHandler(async (req, res) => {
     httpOnly: true,
     expires: new Date(0),
   });
-  
 
   res.status(200).json({ message: "Logged out successfully" });
 });
