@@ -51,7 +51,7 @@ const Profile = () => {
       <div className="container mx-auto p-4 mt-[10rem]">
         <div className="flex justify-center align-center md:flex md:space-x-4">
           <div className="md:w-1/3">
-            <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
+            <h2 className="ml-40 text-2xl font-semibold mb-4 text-teal-600">Update Profile</h2>
 
             <form onSubmit={submitHandler}>
               <div className="mb-4">
@@ -59,7 +59,7 @@ const Profile = () => {
                 <input
                   type="text"
                   placeholder="Enter name"
-                  className="form-input p-4 rounded-sm w-full"
+                  className="form-input p-4 rounded-sm w-full border-2 border-teal-400"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -69,7 +69,7 @@ const Profile = () => {
                 <input
                   type="email"
                   placeholder="Enter email"
-                  className="form-input p-4 rounded-sm w-full"
+                  className="form-input p-4 rounded-sm w-full border-2 border-teal-400"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -79,7 +79,7 @@ const Profile = () => {
                 <input
                   type="password"
                   placeholder="Enter password"
-                  className="form-input p-4 rounded-sm w-full"
+                  className="form-input p-4 rounded-sm w-full border-2 border-teal-400"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -91,7 +91,7 @@ const Profile = () => {
                 <input
                   type="password"
                   placeholder="Confirm Password"
-                  className="form-input p-4 rounded-sm w-full"
+                  className="form-input p-4 rounded-sm w-full border-2 border-teal-400"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
@@ -100,7 +100,7 @@ const Profile = () => {
               <div className="flex justify-between">
                 <button
                   type="submit"
-                  className="bg-teal-500 w-screen mt-[2rem] font-bold text-white py-2 px-4 rounded hover:bg-teal-600"
+                  className="bg-teal-500 w-screen mt-[2rem] font-bold text-white py-2 px-4 rounded hover:bg-teal-700"
                 >
                   Update
                 </button>
