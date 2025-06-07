@@ -49,9 +49,9 @@ const Register = () => {
   };
 
   return (
-    <div className="pl-[10rem] flex flex-wrap">
+    <div className="pl-[10rem] flex flex-wrap  bg-black">
       <div className="mr-[4rem] mt-[5rem]">
-        <h1 className="text-2xl font-semibold mb-4">Register</h1>
+        <h1 className="ml-65 text-2xl font-semibold mb-3 text-teal-700">Register</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem]">
           <div className="my-[2rem]">
@@ -64,7 +64,7 @@ const Register = () => {
             <input
               type="text"
               id="name"
-              className="mt-1 p-2 border rounded w-full"
+              className="mt-1 p-2 border-2 rounded w-full border-teal-400 bg-white"
               placeholder="Enter Name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -73,14 +73,14 @@ const Register = () => {
           <div className="my-[2rem]">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-white"
+              className="block text-sm font-medium text-white "
             >
               Email Address
             </label>
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border rounded w-full"
+              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white "
               placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -96,7 +96,7 @@ const Register = () => {
             <input
               type="password"
               id="password"
-              className="mt-1 p-2 border rounded w-full"
+              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -112,7 +112,7 @@ const Register = () => {
             <input
               type="password"
               id="confirmPassword"
-              className="mt-1 p-2 border rounded w-full"
+              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -122,7 +122,7 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-teal-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
+            className="bg-teal-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] hover:bg-teal-700"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
