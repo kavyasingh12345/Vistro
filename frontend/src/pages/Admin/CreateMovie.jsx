@@ -49,7 +49,7 @@ const CreateMovie = () => {
     const { name, value } = e.target;
 
     if (name === "genre") {
-      const selectedGenre = genres.find((genre) => genre.name === value);
+      const selectedGenre = genres.find((genre) => genre._id === value);
 
       setMovieData((prevData) => ({
         ...prevData,
@@ -134,7 +134,7 @@ const CreateMovie = () => {
               name="name"
               value={movieData.name}
               onChange={handleChange}
-              className="border px-2 py-1 w-full"
+              className="border-2 rounded-2xl px-2 py-1 w-full bg-white border-teal-500 text-black"
             />
           </label>
         </div>
@@ -146,7 +146,7 @@ const CreateMovie = () => {
               name="year"
               value={movieData.year}
               onChange={handleChange}
-              className="border px-2 py-1 w-full"
+              className="border-2 rounded-2xl px-2 py-1 w-full bg-white border-teal-500 text-black"
             />
           </label>
         </div>
@@ -157,7 +157,7 @@ const CreateMovie = () => {
               name="detail"
               value={movieData.detail}
               onChange={handleChange}
-              className="border px-2 py-1 w-full"
+              className="border-2 rounded-2xl px-2 py-1 w-full bg-white border-teal-500 text-black"
             ></textarea>
           </label>
         </div>
@@ -171,7 +171,7 @@ const CreateMovie = () => {
               onChange={(e) =>
                 setMovieData({ ...movieData, cast: e.target.value.split(", ") })
               }
-              className="border px-2 py-1 w-full"
+              className="border-2 rounded-2xl px-2 py-1 w-full bg-white border-teal-500 text-black"
             />
           </label>
         </div>
@@ -182,18 +182,19 @@ const CreateMovie = () => {
               name="genre"
               value={movieData.genre}
               onChange={handleChange}
-              className="border px-2 py-1 w-full"
+              className="border-2 rounded-2xl px-2 py-1 w-full bg-white border-teal-500 text-black"
             >
               {isLoadingGenres ? (
                 <option>Loading genres...</option>
               ) : (
                 genres.map((genre) => (
-                  <option key={genre.id} value={genre.id}>
+                  <option key={genre._id} value={genre._id}>
                     {genre.name}
                   </option>
                 ))
               )}
             </select>
+
           </label>
         </div>
 

@@ -8,10 +8,10 @@ const GenreForm = ({
 }) => {
   return (
     <div className="p-3">
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} className="space-y-3 ck">
         <input
           type="text"
-          className="py-3 px-4 border rounded-lg w-[60rem]"
+          className="py-3 px-4 border-2 border-teal-500 rounded-lg w-[60rem] bg-white text-black"
           placeholder="Write genre name"
           value={value}
           onChange={(e) => setValue(e.target.value)}
