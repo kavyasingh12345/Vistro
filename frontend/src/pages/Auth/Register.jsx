@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../component/Loader";
@@ -49,16 +48,14 @@ const Register = () => {
   };
 
   return (
-    <div className="pl-[10rem] flex flex-wrap  bg-black">
-      <div className="mr-[4rem] mt-[5rem]">
-        <h1 className="ml-65 text-2xl font-semibold mb-3 text-teal-700">Register</h1>
+    <div className="flex bg-black min-h-screen">
+      {/* Left panel - Form */}
+      <div className="flex-1 p-16">
+        <h1 className="text-3xl font-semibold mb-6 text-teal-500">Register</h1>
 
-        <form onSubmit={submitHandler} className="container w-[40rem]">
-          <div className="my-[2rem]">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-white"
-            >
+        <form onSubmit={submitHandler} className="max-w-xl">
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-sm font-medium text-white">
               Name
             </label>
             <input
@@ -70,49 +67,43 @@ const Register = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="my-[2rem]">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-white "
-            >
+
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-sm font-medium text-white">
               Email Address
             </label>
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white "
+              className="mt-1 p-2 border-2 rounded w-full border-teal-400 bg-white"
               placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="my-[2rem]">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-white"
-            >
+
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-sm font-medium text-white">
               Password
             </label>
             <input
               type="password"
               id="password"
-              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white"
+              className="mt-1 p-2 border-2 rounded w-full border-teal-400 bg-white"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="my-[2rem]">
-            <label
-              htmlFor="confirmPassword"
-              className="block text-sm font-medium text-white"
-            >
+
+          <div className="mb-6">
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-white">
               Confirm Password
             </label>
             <input
               type="password"
               id="confirmPassword"
-              className="mt-1 p-2 border-2 rounded w-full  border-teal-400 bg-white"
+              className="mt-1 p-2 border-2 rounded w-full border-teal-400 bg-white"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -122,7 +113,7 @@ const Register = () => {
           <button
             disabled={isLoading}
             type="submit"
-            className="bg-teal-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] hover:bg-teal-700"
+            className="bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-700"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
@@ -135,19 +126,22 @@ const Register = () => {
             Already have an account?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
-              className="text-teal-500 hover:underline"
+              className="text-teal-400 hover:underline"
             >
               Login
             </Link>
           </p>
         </div>
       </div>
+
+      {/* Right panel - Image */}
       <img
         src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt=""
-        className="h-[65rem] w-[55%] xl:block md:hidden sm:hidden rounded-lg"
+        alt="Background"
+        className="flex-1 object-cover w-1/2 hidden xl:block"
       />
     </div>
   );
 };
+
 export default Register;
